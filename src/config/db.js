@@ -1,17 +1,17 @@
-// Veri tabanı bilgileri, bağlantısı için 
-import mysql from "mysql2";
-import dotenv from "dotenv";
+const Sequelize = require('sequelize')
+require('dotenv').config();
 
-dotenv.config();
 
-const db = mysql.createConnection({
-  host: process.env.db_host,
-  user: process.env.db_user,
-  password: process.env.db_host,
-  database: process.env.db_name,
-  waitForConnections: true ,
-  connectionLimit: 10,
-  queueLimit: 0 
-});
+const sequelize = new Sequelize(
 
-export default db;
+  process.env.DB_NAME,
+  process.env.DB_USER,
+  process.env.DB_PASS,
+  {
+     host: process.env.DB_HOST, 
+    dialect: 'mysql'         
+  }
+
+) ;
+ 
+module.exports = sequelize ;
