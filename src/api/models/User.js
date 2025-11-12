@@ -6,7 +6,7 @@ const sequelize = require('../../config/db') ;
 const User = sequelize.define('User' , {
      
     sicil : {
-        type : DataTypes.INTEGER,
+        type : DataTypes.INTEGER(8),
         primaryKey : true ,
         allowNull  : false ,
         unique     : true ,
