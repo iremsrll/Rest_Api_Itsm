@@ -2,7 +2,7 @@ const { DataTypes } = require('sequelize');
 
 const sequelize = require('../../config/db') ;
 
-const Task = sequelize.define({
+const Task =  sequelize.define('Task', {
    
     itsmNu : {
        type  : DataTypes.CHAR(7),
@@ -31,3 +31,5 @@ const Task = sequelize.define({
     },
     
 });
+
+module.exports = Task;
